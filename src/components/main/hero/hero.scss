@@ -1,0 +1,78 @@
+@import './src/variables';
+
+.image {
+  background-image: url("./starwars.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  min-height: 778px;
+  height: 80vh;
+  //opacity: 0.85;
+  @include container;
+
+  &__main {
+    position: relative;
+    @include font-mixin;
+
+    &-wrapper {
+      transform: translateY(35vh);
+      .main__text {
+        font-weight: 900;
+        font-size: 60px;
+        line-height: 70px;
+        letter-spacing: 0.01em;
+        text-transform: uppercase;
+        color: $second-color;
+      }
+
+      .subtext {
+        margin-top: 20px;
+        font-weight: 300;
+        font-size: 22px;
+        line-height: 29px;
+        color: $second-color;
+      }
+
+      .under {
+        margin-top: 0;
+      }
+    }
+  }
+
+  &__line {
+    position: relative;
+
+    .line-svg {
+      position: absolute;
+      top: 50%;
+      left: 20%;
+    }
+  }
+}
+
+.main__nav {
+  position: absolute;
+  bottom: 0;
+
+  .nav__list {
+    display: flex;
+    text-align: center;
+
+    &-item {
+      width: 74px;
+      padding: 20px 0;
+      transition: color 0.5s, background-color 0.5s;
+      font-weight: 700;
+      font-size: 12px;
+      line-height: 15px;
+      text-transform: uppercase;
+      color: $main-color;
+      background-color: $second-color;
+    }
+  }
+}

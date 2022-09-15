@@ -1,0 +1,18 @@
+$main-color: #232323;
+$second-color: #FFFFFF;
+$accent-color: #FFC900;
+
+$blue-line-color: #69AED7;
+
+$gray-color: #929292;
+
+
+@mixin font-mixin {
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+}
+
+@mixin container {
+  max-width: 1750px;
+  margin: 0 auto;
+}

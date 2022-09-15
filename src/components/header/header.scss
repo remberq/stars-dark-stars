@@ -1,0 +1,73 @@
+@import "./src/variables";
+
+.header {
+  @include font-mixin;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 100px;
+  z-index: 2;
+
+  &__right--side {
+    display: flex;
+    align-items: center;
+    margin-right: 60px;
+  }
+
+  &__logo {
+    margin-left: 60px;
+
+    .logo-path {
+      transition: fill 0.5s;
+    }
+
+    &:hover {
+      cursor: pointer;
+      .logo-path {
+        fill: #69AED7;
+      }
+    }
+  }
+
+  &__time {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 210px;
+    height: 100px;
+    background-color: $main-color;
+    margin-right: 120px;
+    padding: 0 10px;
+
+    .time__text {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .text__top {
+        font-weight: 900;
+        font-size: 30px;
+        line-height: 37px;
+        text-transform: uppercase;
+        color: $second-color;
+      }
+
+      .text__bottom {
+        font-weight: 500;
+        font-size: 11px;
+        line-height: 12px;
+        color: $gray-color;
+      }
+    }
+  }
+
+  &__burger {
+    transition: transform 0.5s;
+    &:hover {
+      cursor: pointer;
+      transform: translateX(-5px);
+    }
+  }
+}

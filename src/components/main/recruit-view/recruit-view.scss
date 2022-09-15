@@ -1,0 +1,14 @@
+@import './src/variables';
+
+.recruit-wrapper {
+  @include container;
+  height: 875px;
+  background-image: url("./ships.jpg");
+  background-size: 592px;
+  background-repeat: no-repeat;
+  background-position: top 150px right 184px;
+}
+
+.recruit {
+  background-color: $main-color;
+}
