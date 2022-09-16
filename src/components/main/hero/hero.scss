@@ -10,24 +10,29 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   width: 100%;
-  min-height: 778px;
-  height: 80vh;
+  min-height: 70vh;
   //opacity: 0.85;
   @include container;
 
+
   &__main {
     position: relative;
-    @include font-mixin;
+    @include font-mixin-normal;
+    z-index: 4;
 
     &-wrapper {
-      transform: translateY(35vh);
+      position: absolute;
+      bottom: 30%;
+      @include outline-accent;
+      background-color: rgba(255, 255, 255, 0.18);
+
       .main__text {
         font-weight: 900;
         font-size: 60px;
         line-height: 70px;
         letter-spacing: 0.01em;
         text-transform: uppercase;
-        color: $second-color;
+        color: $accent-color;
       }
 
       .subtext {
@@ -35,7 +40,7 @@
         font-weight: 300;
         font-size: 22px;
         line-height: 29px;
-        color: $second-color;
+        color: $accent-color;
       }
 
       .under {
@@ -46,7 +51,7 @@
 
   &__line {
     position: relative;
-
+    z-index: 3;
     .line-svg {
       position: absolute;
       top: 50%;
@@ -58,6 +63,7 @@
 .main__nav {
   position: absolute;
   bottom: 0;
+  @include outline-accent;
 
   .nav__list {
     display: flex;

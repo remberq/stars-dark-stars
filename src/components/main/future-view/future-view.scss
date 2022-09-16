@@ -1,0 +1,51 @@
+@import "./src/variables";
+
+.future__image {
+  background-image: url("shturm.jpg");
+  background-size: cover;
+  height: 780px;
+  border-bottom: 3px solid $accent-color;
+}
+
+.future {
+  position: relative;
+  @include container;
+  height: 100%;
+
+  &__wrapper {
+    width: 710px;
+    margin-left: 30%;
+    padding-top: 246px;
+  }
+
+  &__heading {
+    width: 710px;
+    margin-bottom: 100px;
+    @include font-mixin-black;
+    font-size: 100px;
+    line-height: 117px;
+    letter-spacing: 0.01em;
+    text-transform: uppercase;
+    color: $second-color;
+  }
+
+  &__link {
+    color: $accent-color;
+    text-decoration: none;
+    padding: 2px 0;
+    border-bottom: 1px solid $accent-color;
+  }
+}
+
+//.future__decor {
+//  position: absolute;
+//  width: 390px;
+//  height: 60px;
+//  bottom: 0;
+//  left: 235px;
+//  background-color: $second-color;
+//  border-top: $border-accent-3px;
+//  border-left: $border-accent-3px;
+//  border-right: $border-accent-3px;
+//  border-bottom: white;
+//}

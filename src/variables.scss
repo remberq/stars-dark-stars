@@ -5,14 +5,44 @@ $accent-color: #FFC900;
 $blue-line-color: #69AED7;
 
 $gray-color: #929292;
+$gray-color--darken: #767676;
+$gray-color--more-dark: #434343;
 
 
-@mixin font-mixin {
+@mixin font-mixin-normal {
   font-family: 'Montserrat', sans-serif;
   font-style: normal;
 }
 
+@mixin font-mixin-black {
+  font-family: 'Montserrat Black', sans-serif;
+  font-style: normal;
+}
+
+
 @mixin container {
-  max-width: 1750px;
+  max-width: 1440px;
   margin: 0 auto;
 }
+
+@mixin border-main {
+  border-left: $border-main-3px;
+  border-right: $border-main-3px;
+}
+
+@mixin border-second {
+  border-left: 2px solid $second-color;
+  border-right: 2px solid $second-color;
+}
+
+@mixin border-accent {
+  border-left: $border-accent-3px;
+  border-right: $border-accent-3px;
+}
+
+@mixin outline-accent {
+  outline: 3px solid $accent-color;
+}
+
+$border-accent-3px: 3px solid $accent-color;
+$border-main-3px: 3px solid $main-color;

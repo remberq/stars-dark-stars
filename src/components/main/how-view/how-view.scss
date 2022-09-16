@@ -1,0 +1,146 @@
+@import "./src/variables";
+
+.how__ground {
+  background-color: $second-color;
+}
+
+.how__decor {
+  position: absolute;
+  width: 390px;
+  height: 60px;
+  top: -60px;
+  left: 235px;
+  background-color: $second-color;
+  border-top: $border-accent-3px;
+  border-left: $border-accent-3px;
+  border-right: $border-accent-3px;
+  border-bottom: $second-color;
+}
+
+.how {
+  position: relative;
+  height: 1720px;
+  @include container;
+  @include border-accent;
+
+  &__line {
+    position: absolute;
+    top: 120px;
+    left: 150px;
+    z-index: 1;
+  }
+
+  &__title {
+    position: relative;
+    padding-top: 200px;
+    margin-bottom: 28px;
+    @include font-mixin-black;
+    font-weight: 900;
+    font-size: 70px;
+    line-height: 85px;
+    letter-spacing: 0.01em;
+    text-transform: uppercase;
+    color: $main-color;
+    text-align: center;
+    z-index: 4;
+  }
+
+  &__subtext {
+    position: relative;
+    max-width: 310px;
+    height: 180px;
+    margin-left: 50%;
+    @include font-mixin-normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 150%;
+    color: $main-color;
+    z-index: 4;
+  }
+  &__back {
+    position: absolute;
+    width: 100%;
+    padding: 20px 40px 0;
+    z-index: 2;
+  }
+
+  &__back-title {
+    @include font-mixin-black;
+    font-size: 270px;
+    line-height: 195px;
+    text-transform: uppercase;
+    color: $gray-color--darken;
+    opacity: 0.07;
+  }
+
+  .left {
+    text-align: start;
+  }
+
+  .right {
+    text-align: right;
+  }
+}
+
+.how__image-container {
+  position: relative;
+  margin-top: 300px;
+  margin-left: 40px;
+  .how__image {
+    position: relative;
+    max-width: 850px;
+    width: 100%;
+    max-height: 615px;
+    height: 100%;
+    outline: 3px solid $main-color;
+  }
+
+  .how-svg {
+    position: absolute;
+    top: -50px;
+    left: 150px;
+  }
+}
+
+.how__text {
+  position: absolute;
+  top: -133px;
+  right: 165px;
+  width: 460px;
+  height: 615px;
+  background-color: $main-color;
+  padding-right: 80px;
+  text-align: right;
+  @include outline-accent;
+
+  &-heading {
+    padding-top: 140px;
+    @include font-mixin-black;
+    font-size: 70px;
+    line-height: 82px;
+    letter-spacing: 0.01em;
+    text-transform: uppercase;
+
+    color: $second-color;
+  }
+
+  &-subject {
+    font-family: 'Montserrat Medium', sans-serif;
+    font-size: 30px;
+    line-height: 120%;
+    text-transform: uppercase;
+    color: $second-color;
+  }
+
+  &-info {
+    display: inline-block;
+    width: 285px;
+    padding-top: 55px;
+    @include font-mixin-normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 150%;
+
+    color: #FFFFFF;
+  }
+}

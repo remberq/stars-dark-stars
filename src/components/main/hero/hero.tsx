@@ -1,5 +1,6 @@
 import { FC } from 'react';
 import { NavLink } from 'react-router-dom';
+
 import './hero.scss';
 
 interface NavInterface {
@@ -34,8 +35,7 @@ const Hero: FC = () => {
             <p className="main__text">FORCE</p>
             <p className="main__text">HOPE</p>
             <p className="main__text">JEDI</p>
-            <p className={'subtext'}>Do. Or do not.</p>
-            <p className={'subtext under'}>There is no try.</p>
+            <p className={'subtext'}>Do. Or do not.There is no try.</p>
           </div>
           <nav className={'main__nav'}>
             <ul className={'nav__list'}>
@@ -45,7 +45,7 @@ const Hero: FC = () => {
               <NavLink style={navStyle} to={'/force'} className="nav__list-item">
                 FORCE
               </NavLink>
-              <NavLink style={navStyle} to={'/sith'} className="nav__list-item">
+              <NavLink style={navStyle} to={'/'} className="nav__list-item">
                 SITH
               </NavLink>
             </ul>

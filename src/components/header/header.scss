@@ -1,7 +1,7 @@
 @import "./src/variables";
 
 .header {
-  @include font-mixin;
+  @include font-mixin-normal;
   position: absolute;
   display: flex;
   align-items: center;
@@ -40,6 +40,7 @@
     background-color: $main-color;
     margin-right: 120px;
     padding: 0 10px;
+    @include outline-accent;
 
     .time__text {
       display: flex;

@@ -1,0 +1,73 @@
+@import "./src/variables";
+
+.force__ground {
+  position: relative;
+  height: 730px;
+  background-color: $main-color;
+  border-bottom: $border-accent-3px;
+}
+
+.force {
+  position: relative;
+  @include container;
+  @include border-accent;
+  height: 100%;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  &__line {
+    position: absolute;
+    top: -100px;
+    left: 12%;
+    width: 270px;
+    height: 600px;
+    transform: skewX(-20deg);
+    background-color: $accent-color;
+  }
+
+  &__left {
+    width: 100%;
+    height: 100%;
+    padding-left: 40%;
+  }
+
+  &__info {
+    position: relative;
+    z-index: 2;
+    max-width: 380px;
+    padding-top: 135px;
+  }
+
+  &__heading {
+    @include font-mixin-black;
+    font-weight: 900;
+    font-size: 70px;
+    line-height: 85px;
+    letter-spacing: 0.01em;
+    text-transform: uppercase;
+    color: $second-color;
+  }
+
+  &__right {
+
+    &-image {
+      margin-top: 57px;
+      object-fit: cover;
+      width: 470px;
+      height: 673px;
+      border: $border-accent-3px;
+    }
+  }
+}
+
+.force__decor {
+  position: absolute;
+  z-index: 3;
+  bottom: -3px;
+  width: 100%;
+  max-width: 717px;
+  height: 60px;
+  background-color: $second-color;
+  border-top: $border-accent-3px;
+}
