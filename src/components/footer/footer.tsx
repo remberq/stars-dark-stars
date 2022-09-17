@@ -11,10 +11,10 @@ const Footer: FC = () => {
         <nav className={'footer__nav'}>
           <ul className={'footer__nav-list'}>
             <li className="list__item">Home</li>
-            <li className="list__item">projects</li>
+            <li className="list__item">films</li>
             <li className="list__item">people</li>
-            <li className="list__item">partners</li>
-            <li className="list__item">about</li>
+            <li className="list__item">ships</li>
+            <li className="list__item">Vehicles</li>
             <li className="list__item">join</li>
             <li className="list__item">contact</li>
           </ul>

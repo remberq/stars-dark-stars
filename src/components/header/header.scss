@@ -37,7 +37,7 @@
     justify-content: space-around;
     width: 210px;
     height: 100px;
-    background-color: $main-color;
+    background-color: $gray-color--more-dark;
     margin-right: 120px;
     padding: 0 10px;
     @include outline-accent;
@@ -59,7 +59,7 @@
         font-weight: 500;
         font-size: 11px;
         line-height: 12px;
-        color: $gray-color;
+        color: $gray-color-light;
       }
     }
   }

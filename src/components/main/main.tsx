@@ -1,8 +1,6 @@
 import { FC } from 'react';
 
 import './main.scss';
-import Header from '../header/header';
-import Footer from '../footer/footer';
 
 import Hero from './hero/hero';
 import RecruitView from './recruit-view/recruit-view';
@@ -16,7 +14,6 @@ import Question from './question/question';
 const Main: FC = () => {
   return (
     <>
-      <Header />
       <Hero />
       <RecruitView />
       <FutureView />
@@ -25,7 +22,6 @@ const Main: FC = () => {
       <MediaView />
       <ForceUser />
       <Question />
-      <Footer />
     </>
   );
 };

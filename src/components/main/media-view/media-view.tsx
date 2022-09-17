@@ -34,7 +34,6 @@ const MediaView: FC = () => {
             <button className={'media__btn-play'}>PLAY</button>
           </div>
         </div>
-        <div className={'media__decor'}></div>
       </section>
     </div>
   );

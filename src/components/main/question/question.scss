@@ -8,7 +8,7 @@
 
 .question {
   @include container;
-  @include border-accent;
+  //@include border-accent;
   height: 100%;
   text-align: end;
 

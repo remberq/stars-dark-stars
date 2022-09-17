@@ -12,11 +12,12 @@ const ForceUser: FC = () => {
           <div className={'force__info'}>
             <h3 className={'force__heading'}>our business model</h3>
           </div>
+          <div className={'force__decor'}></div>
         </div>
         <div className={'force__right'}>
+          <div className={'force__right-decor'}></div>
           <img className={'force__right-image'} src={darth} alt="force user" />
         </div>
-        <div className={'force__decor'}></div>
       </section>
     </div>
   );

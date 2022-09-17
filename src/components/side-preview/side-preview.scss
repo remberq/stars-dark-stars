@@ -1,0 +1,138 @@
+@import "./src/variables";
+
+.side__ground {
+  background-color: $main-color;
+  height: 2000px;
+}
+
+.side {
+  @include container;
+  width: 100%;
+  padding-top: 150px;
+
+  &__hero {
+
+    display: grid;
+    grid-template-columns: 40% 60%;
+    align-items: end;
+    width: 100%;
+    max-width: 1120px;
+    height: 670px;
+    background-color: $black-color;
+    margin-left: 20px;
+
+    &-line {
+      position: relative;
+
+      .hero-line {
+        position: absolute;
+        bottom: -100px;
+        left: 200px;
+        transform: skewX(-20deg);
+        width: 110px;
+        height: 500px;
+        background-color: $accent-color;
+      }
+    }
+
+    &-text {
+      padding-bottom: 50px;
+
+      .hero__heading {
+        margin-bottom: 12px;
+        @include font-mixin-black;
+        font-weight: 900;
+        font-size: 60px;
+        line-height: 120%;
+        letter-spacing: 0.01em;
+        text-transform: uppercase;
+        color: $second-color;
+      }
+
+      .hero__subject {
+        @include font-mixin-normal;
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 29px;
+        color: $second-color;
+        margin-bottom: 50px;
+      }
+
+      .hero__link {
+        @include font-mixin-normal;
+        font-weight: 700;
+        font-size: 12px;
+        line-height: 15px;
+        text-transform: uppercase;
+        color: $second-color;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+
+.info {
+  position: relative;
+  @include container;
+  height: 900px;
+
+  .info-1 {
+    position: absolute;
+    top: 70px;
+    right: 120px;
+  }
+
+  .info-2 {
+    position: absolute;
+    top: 130px;
+    left: 50px;
+  }
+
+  .info-3 {
+    position: absolute;
+    bottom: 150px;
+    right: 25%;
+  }
+}
+
+.info__wrapper {
+  position: relative;
+  width: 500px;
+
+  .info__image {
+    object-fit: cover;
+    width: 375px;
+    height: 271px;
+    opacity: 0.8;
+  }
+
+  .info__heading {
+    position: absolute;
+    bottom: 70px;
+    left: 35%;
+
+    @include font-mixin-black;
+    font-weight: 900;
+    font-size: 41px;
+    line-height: 70px;
+    letter-spacing: 0.01em;
+    text-transform: uppercase;
+    color: $second-color;
+    white-space: nowrap;
+  }
+
+  .info__list {
+    position: absolute;
+    z-index: 2;
+    bottom: -50px;
+    left: 42%;
+
+    font-family: 'Montserrat Medium',sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    color: $second-color;
+  }
+}

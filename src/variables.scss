@@ -4,9 +4,12 @@ $accent-color: #FFC900;
 
 $blue-line-color: #69AED7;
 
-$gray-color: #929292;
-$gray-color--darken: #767676;
-$gray-color--more-dark: #434343;
+$gray-color-light: #929292;
+$gray-color: #767676;
+$gray-color-darken: #434343;
+$gray-color--more-dark: #313131;
+
+$black-color: #2D2D2D;
 
 
 @mixin font-mixin-normal {
@@ -45,4 +48,4 @@ $gray-color--more-dark: #434343;
 }
 
 $border-accent-3px: 3px solid $accent-color;
-$border-main-3px: 3px solid $main-color;
+$border-main-3px: 3px solid $gray-color--more-dark;
