@@ -2,11 +2,13 @@
 
 .side__ground {
   background-color: $main-color;
-  height: 2000px;
+  border-bottom: $border-accent-3px;
 }
 
 .side {
   @include container;
+  @include border-accent;
+  border-bottom: $border-accent-3px;
   width: 100%;
   padding-top: 150px;
 
@@ -15,11 +17,11 @@
     display: grid;
     grid-template-columns: 40% 60%;
     align-items: end;
-    width: 100%;
     max-width: 1120px;
     height: 670px;
     background-color: $black-color;
     margin-left: 20px;
+    @include outline-accent;
 
     &-line {
       position: relative;
@@ -64,75 +66,248 @@
         font-size: 12px;
         line-height: 15px;
         text-transform: uppercase;
-        color: $second-color;
+        color: $accent-color;
         text-decoration: none;
+        border-bottom: 1px solid $accent-color;
       }
     }
   }
 }
 
 
-.info {
+// new section info-image
+
+
+.small-image, .combine-image {
   position: relative;
   @include container;
+  @include border-accent;
   height: 900px;
+  border-bottom: $border-accent-3px;
 
-  .info-1 {
+  .small-1 {
     position: absolute;
-    top: 70px;
-    right: 120px;
+    top: -50px;
+    right: 100px;
+    z-index: 2;
   }
 
-  .info-2 {
+  .small-2 {
     position: absolute;
     top: 130px;
     left: 50px;
   }
 
-  .info-3 {
+  .small-3 {
     position: absolute;
     bottom: 150px;
     right: 25%;
   }
+
+  .small-4 {
+    position: absolute;
+    top: 0;
+    left: 50px;
+  }
+
+  .small-5 {
+    position: absolute;
+    top: 200px;
+    right: 200px;
+  }
+
+  .small-6 {
+    position: absolute;
+    top: 450px;
+    left: 15%;
+  }
+
+  .small-7 {
+    position: absolute;
+    top: 450px;
+    right: 50px;
+  }
 }
 
-.info__wrapper {
+.small__wrapper {
   position: relative;
   width: 500px;
 
-  .info__image {
+
+  .small__wrapper-image {
+    @include outline-accent;
     object-fit: cover;
     width: 375px;
     height: 271px;
-    opacity: 0.8;
   }
+}
 
-  .info__heading {
+.small__list {
+  position: absolute;
+  z-index: 2;
+  bottom: -120px;
+  left: 42%;
+
+  font-family: 'Montserrat Medium',sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+  color: $second-color;
+}
+
+.small__heading {
+  position: absolute;
+  bottom: 70px;
+  left: 35%;
+
+  @include font-mixin-black;
+  font-weight: 900;
+  font-size: 41px;
+  line-height: 70px;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  color: $accent-color;
+  white-space: nowrap;
+}
+
+.big-image {
+  position: relative;
+  @include container;
+  @include border-accent;
+  height: 800px;
+  border-bottom: $border-accent-3px;
+}
+
+.big__decor {
+  position: absolute;
+  left: 45%;
+  top: 30%;
+  width: 120px;
+  height: 300px;
+  background-color: $accent-color;
+  transform: skewX(-20deg);
+}
+
+.big__wrapper {
+  position: relative;
+
+  .big__heading {
     position: absolute;
-    bottom: 70px;
-    left: 35%;
-
+    bottom: 20px;
+    left: 50px;
+    width: 300px;
     @include font-mixin-black;
     font-weight: 900;
-    font-size: 41px;
-    line-height: 70px;
+    font-size: 45px;
+    line-height: 100%;
     letter-spacing: 0.01em;
     text-transform: uppercase;
-    color: $second-color;
-    white-space: nowrap;
+
+    color: $accent-color;
   }
 
-  .info__list {
+  .big__list {
     position: absolute;
+    bottom: -120px;
+    right: 50px;
+    width: 300px;
     z-index: 2;
-    bottom: -50px;
-    left: 42%;
-
     font-family: 'Montserrat Medium',sans-serif;
     font-style: normal;
     font-weight: 500;
     font-size: 18px;
     line-height: 22px;
     color: $second-color;
+  }
+
+  &-image {
+    @include outline-accent;
+    object-fit: cover;
+    width: 620px;
+    height: 450px;
+  }
+}
+
+.big-1 {
+  position: absolute;
+  left: 50px;
+  top: 0;
+  z-index: 2;
+}
+
+.big-2 {
+  position: absolute;
+  right: 80px;
+  top: 180px;
+}
+
+.big-3 {
+  position: absolute;
+  left: 50px;
+  top: 120px;
+}
+
+.combine-image {
+  position: relative;
+  @include container;
+  @include border-accent;
+  height: 900px;
+
+  .big__decor {
+    left: 40%;
+    top: 30%;
+  }
+}
+
+.last-image {
+  position: relative;
+  @include container;
+  @include border-accent;
+  height: 600px;
+
+  .small-4 {
+    position: absolute;
+    right: 120px;
+    top: 150px;
+  }
+
+  .small-5 {
+    position: absolute;
+    left: 150px;
+    top: 20px;
+  }
+}
+
+.side__decor {
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 50%;
+  height: 120px;
+  background-color: $second-color;
+  z-index: 2;
+  border-right: $border-accent-3px;
+  border-top: $border-accent-3px;
+}
+
+.small-decor {
+  position: absolute;
+  bottom: -3px;
+  z-index: 2;
+  width: 50%;
+  height: 120px;
+  background-color: $main-color;
+  border-top: $border-accent-3px;
+  border-right: $border-accent-3px;
+}
+
+.middle {
+  padding-bottom: 100px;
+
+  .small-decor {
+    right: 0;
+    border-right: none;
+    border-left: $border-accent-3px;
   }
 }

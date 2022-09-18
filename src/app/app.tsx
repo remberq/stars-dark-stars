@@ -12,7 +12,11 @@ const App: FC = () => (
     <Header />
     <Routes>
       <Route path={'/team'} element={<SidePreview />} />
-      <Route path={'/'} element={<Main />} />
+      <Route path={'/'} element={<Main />}>
+        <Route path={'/sith'} element={<Main />} />
+        <Route path={'/jedi'} element={<Main />} />
+        <Route path={'/force'} element={<Main />} />
+      </Route>
     </Routes>
     <Footer />
   </>
