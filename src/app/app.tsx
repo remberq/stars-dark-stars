@@ -6,6 +6,7 @@ import Main from '../components/main/main';
 import Header from '../components/header/header';
 import Footer from '../components/footer/footer';
 import SidePreview from '../components/side-preview/side-preview';
+import Search from '../components/search/search';
 
 const App: FC = () => (
   <>
@@ -17,6 +18,7 @@ const App: FC = () => (
         <Route path={'/jedi'} element={<Main />} />
         <Route path={'/force'} element={<Main />} />
       </Route>
+      <Route path={'/search'} element={<Search />} />
     </Routes>
     <Footer />
   </>

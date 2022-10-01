@@ -1,0 +1,18 @@
+@import "./src/variables";
+
+.search__ground {
+  background-color: $main-color;
+  border-top: $border-accent-3px;
+}
+
+.line {
+  height: 100px;
+  background-color: $main-color;
+}
+
+.search {
+  @include container;
+  //@include border-accent;
+
+  height: 600px;
+}
