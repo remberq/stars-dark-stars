@@ -13,3 +13,8 @@ export const getPeopleById = createAsyncThunk('people/getPeopleById', async (id:
   const response: AxiosResponse<SWPeopleDTO> = await axiosInstance.get(`/people/${id}/`);
   return response.data;
 });
+
+export const getAllPeopleNextPage = createAsyncThunk('starships/getAllPeopleNextPage', async (page: string) => {
+  const response: AxiosResponse<AxiosDataResponse<SWPeopleDTO[]>> = await axiosInstance.get(`${page}`);
+  return response.data;
+});

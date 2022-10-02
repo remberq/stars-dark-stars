@@ -1,17 +1,19 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 import { SWStarshipsDTO } from '../../types/SWStarshipsDTO';
-import { getAllStarships, getAllStarshipsNext, getStarshipsById } from '../api/StarshipsActions';
+import { getAllStarships, getAllStarshipsNextPage, getStarshipsById } from '../api/StarshipsActions';
 import { AxiosDataResponse } from '../../services';
 
 interface ShipsState {
   ships: SWStarshipsDTO[];
   next: string | null;
+  previous: string | null;
 }
 
 const initialState: ShipsState = {
   ships: [],
-  next: '',
+  next: null,
+  previous: null,
 };
 
 const starshipsSlice = createSlice({
@@ -28,10 +30,11 @@ const starshipsSlice = createSlice({
         },
       )
       .addCase(
-        getAllStarshipsNext.fulfilled,
+        getAllStarshipsNextPage.fulfilled,
         (state: ShipsState, action: PayloadAction<AxiosDataResponse<SWStarshipsDTO[]>>) => {
           state.ships = action.payload.results;
           state.next = action.payload.next;
+          state.previous = action.payload.previous;
         },
       )
       .addCase(getStarshipsById.fulfilled, (state: ShipsState, action: PayloadAction<SWStarshipsDTO>) => {

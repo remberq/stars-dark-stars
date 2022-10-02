@@ -1,13 +1,18 @@
 import { configureStore } from '@reduxjs/toolkit';
 
-import { people, films } from '../redux/slices/slices';
+import { people } from '../redux/slices/PeopleSlice';
+import { films } from '../redux/slices/FilmsSlice';
 import { ships } from '../redux/slices/StarshipsSlice';
+import { vehicles } from '../redux/slices/VehiclesSlice';
+import { planets } from '../redux/slices/PlanetsSlice';
 
 export const store = configureStore({
   reducer: {
     people,
     films,
     ships,
+    vehicles,
+    planets,
   },
   middleware: (getDefaultMiddleware) => getDefaultMiddleware({ serializableCheck: false }),
 });

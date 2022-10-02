@@ -2,17 +2,114 @@
 
 .search__ground {
   background-color: $main-color;
-  border-top: $border-accent-3px;
-}
-
-.line {
-  height: 100px;
-  background-color: $main-color;
 }
 
 .search {
+  position: relative;
   @include container;
   //@include border-accent;
+  height: 100vh;
+  text-align: center;
 
-  height: 600px;
+  &__input {
+    height: 20px;
+  }
+
+  &__icons {
+    margin: 0 auto;
+    display: flex;
+    width: 50%;
+    justify-content: space-between;
+    height: 100%;
+    align-items: center;
+  }
+
+  &__icon {
+    text-decoration: none;
+    z-index: 5;
+    padding: 10px;
+    @include magic-border(2px, $accent-color, 0.2s, 0);
+    transition: all 0.2s;
+    &:hover {
+      cursor: pointer;
+      @include animation(1.2);
+    }
+
+    &:active {
+      transform: scale(1.13);
+      background-color: $gray-color--more-dark;
+    }
+    .icon__img {
+      width: 60px;
+    }
+    .icon__text {
+      margin-top: 15px;
+      @include font-mixin-black;
+      font-size: 12px;
+      line-height: 110%;
+      text-transform: uppercase;
+
+      color: $accent-color;
+    }
+  }
+}
+
+.search-bg {
+  //border: $border-accent-3px;
+  padding-bottom: 20px;
+  background: linear-gradient(
+                  60deg,
+                  rgba(60, 88, 123, 0.8),
+                  rgba(76, 60, 123, 0.8),
+                  rgba(123, 60, 94, 0.8),
+                  rgba(198, 22, 22, 0.8)
+  );
+  background-size: 300% 300%;
+  background-position: 0 50%;
+  border-radius: 6px;
+  animation: moveGradient 8s alternate infinite;
+}
+
+.decor__line {
+  position: absolute;
+  top: 0;
+  right: 100px;
+  width: 100px;
+  height: 50%;
+  z-index: 6;
+
+  transform: skewX(-20deg);
+  background-color: $accent-color;
+
+  &-text {
+    position: absolute;
+    bottom: 150px;
+    left: -35px;
+    @include font-mixin-black;
+    font-size: 60px;
+    line-height: 70px;
+    letter-spacing: 0.01em;
+    text-transform: uppercase;
+    color: $main-color;
+    transform: rotate(-90deg);
+    transition: 0.2s;
+    background-image: linear-gradient(50deg, #3C587B, #C61616);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    &:hover {
+      transform: rotate(-90deg) scale(1.05);
+      cursor: pointer;
+    }
+
+    &:active {
+      transform: rotate(-90deg) scale(1);
+    }
+  }
+}
+
+@keyframes moveGradient {
+  50% {
+    background-position: 100% 50%;
+  }
 }

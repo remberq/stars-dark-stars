@@ -29,6 +29,10 @@
         fill: #69AED7;
       }
     }
+
+    &:active {
+      transform: scale(0.95);
+    }
   }
 
   &__time {

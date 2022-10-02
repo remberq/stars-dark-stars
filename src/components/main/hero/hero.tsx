@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 import './hero.scss';
 
@@ -19,16 +19,18 @@ const Hero: FC = () => {
     <div className="image">
       <main className={'hero'}>
         <div className={'hero__line'}>
-          <svg
-            className={'line-svg'}
-            width="340"
-            height="627"
-            viewBox="0 0 340 627"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path d="M340 0H221L0 627H127.5L340 0Z" fill="#FFC900" />
-          </svg>
+          <Link to={'/'}>
+            <svg
+              className={'line-svg'}
+              width="340"
+              height="627"
+              viewBox="0 0 340 627"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="M340 0H221L0 627H127.5L340 0Z" fill="#FFC900" />
+            </svg>
+          </Link>
         </div>
         <div className={'hero__main'}>
           <div className={'hero__main-wrapper'}>
@@ -45,7 +47,7 @@ const Hero: FC = () => {
               <NavLink style={navStyle} to={'/force'} className="nav__list-item">
                 FORCE
               </NavLink>
-              <NavLink style={navStyle} to={'/'} className="nav__list-item">
+              <NavLink style={navStyle} to={'/main'} className="nav__list-item">
                 SITH
               </NavLink>
             </ul>

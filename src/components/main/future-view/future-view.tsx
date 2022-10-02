@@ -9,7 +9,7 @@ const FutureView: FC = () => {
       <section className={'future'}>
         <div className={'future__wrapper'}>
           <div className={'future__heading'}>HOMES OF TOMORROW</div>
-          <Link className={'future__link'} to={'/team'}>
+          <Link className={'future__link'} to={'team'}>
             THE TEAM
           </Link>
         </div>
