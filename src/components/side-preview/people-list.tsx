@@ -1,32 +1,43 @@
-import { FC } from 'react';
+import { FC, useEffect } from 'react';
 import './side-preview.scss';
-import { Link } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
+import DocumentTitle from 'react-document-title';
 
-import image from '../../assets/image/carol-kennedy-LZiuAFfMg8I-unsplash.jpg';
 import war from '../../assets/image/war.jpeg';
 import Question from '../main/question/question';
+import { useAppDispatch, useAppSelector } from '../../hook/hook';
+import { searchAllPeople } from '../../redux/api/PeopleAction';
+import { SWPeopleDTO } from '../../types/SWPeopleDTO';
+import LoadingPage from '../load-page/LoadingPage';
 
 interface SideImageProps {
   className?: string;
+  people: SWPeopleDTO;
 }
 
-const SmallImage: FC<SideImageProps> = ({ className }) => (
-  <>
+const SmallImage: FC<SideImageProps> = ({ className, people }) => {
+  return (
     <div className={`small__wrapper ${className}`}>
-      <img className={'small__wrapper-image'} src={image} alt="" />
-      <h3 className={'small__heading'}>skowronia 2</h3>
+      <img
+        className={'small__wrapper-image'}
+        src={`https://starwars-visualguide.com/assets/img/characters/${people.id}.jpg`}
+        alt=""
+      />
+      <NavLink to={`${people.id}`}>
+        <h3 className={'small__heading'}>{people.name}</h3>
+      </NavLink>
       <ul className={'small__list'}>
-        <li className={'info__list-item'}>Kraków, ul. Skowronia 1</li>
-        <li className={'info__list-item'}>Status : delivered</li>
-        <li className={'info__list-item'}>Usable space : 49m2</li>
-        <li className={'info__list-item'}>Units :</li>
-        <li className={'info__list-item'}>Year : 2013</li>
+        <li className={'info__list-item'}>Birth Year : {people.birth_year}</li>
+        <li className={'info__list-item'}>Gender : {people.gender}</li>
+        <li className={'info__list-item'}>Mass : {people.mass}</li>
+        <li className={'info__list-item'}>Eye : {people.eye_color}</li>
+        <li className={'info__list-item'}>Height : {people.height}</li>
       </ul>
     </div>
-  </>
-);
+  );
+};
 
-const BigImage: FC<SideImageProps> = ({ className }) => (
+const BigImage: FC<Partial<SideImageProps>> = ({ className }) => (
   <>
     <div className={`big__wrapper ${className}`}>
       <img className={'big__wrapper-image'} src={war} alt="" />
@@ -42,7 +53,16 @@ const BigImage: FC<SideImageProps> = ({ className }) => (
   </>
 );
 
-const SidePreview: FC = () => {
+const PeopleList: FC = () => {
+  const dispatch = useAppDispatch();
+  useEffect(() => {
+    dispatch(searchAllPeople(''));
+  }, [dispatch]);
+  const { people, load } = useAppSelector((state) => state.people);
+  if (load) {
+    return <LoadingPage />;
+  }
+  console.log(people, load);
   return (
     <>
       <div className={'side__ground'}>
@@ -62,9 +82,9 @@ const SidePreview: FC = () => {
         </main>
         <section className={'small-image'}>
           <div className={'small-decor'}></div>
-          <SmallImage className={'small-1'} />
-          <SmallImage className={'small-2'} />
-          <SmallImage className={'small-3'} />
+          <SmallImage people={people[0]} className={'small-1'} />
+          <SmallImage people={people[3]} className={'small-2'} />
+          <SmallImage people={people[4]} className={'small-3'} />
         </section>
         <section className={'big-image'}>
           <BigImage className={'big-1'} />
@@ -73,21 +93,21 @@ const SidePreview: FC = () => {
           <div className={'small-decor'}></div>
         </section>
         <section className={'small-image middle'}>
-          <SmallImage className={'small-4'} />
-          <SmallImage className={'small-5'} />
-          <SmallImage className={'small-6'} />
+          <SmallImage people={people[2]} className={'small-4'} />
+          <SmallImage people={people[1]} className={'small-5'} />
+          <SmallImage people={people[7]} className={'small-6'} />
           <div className={'small-decor'}></div>
         </section>
         <section className={'combine-image'}>
           <div className={'big__decor'}></div>
           <BigImage className={'big-3'} />
-          <SmallImage className={'small-1'} />
-          <SmallImage className={'small-7'} />
+          <SmallImage people={people[6]} className={'small-1'} />
+          <SmallImage people={people[8]} className={'small-7'} />
           <div className={'small-decor'}></div>
         </section>
         <section className={'last-image'}>
-          <SmallImage className={'small-4'} />
-          <SmallImage className={'small-5'} />
+          <SmallImage people={people[5]} className={'small-4'} />
+          <SmallImage people={people[9]} className={'small-5'} />
           <div className={'side__decor'}></div>
         </section>
       </div>
@@ -96,4 +116,4 @@ const SidePreview: FC = () => {
   );
 };
 
-export default SidePreview;
+export default PeopleList;

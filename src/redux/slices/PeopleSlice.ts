@@ -3,12 +3,14 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { SWPeopleDTO } from '../../types/SWPeopleDTO';
 import { getAllPeopleNextPage, getPeopleById, searchAllPeople } from '../api/PeopleAction';
 import { AxiosDataResponse } from '../../services';
+import { getId } from '../../components/side-preview/idMatcher';
 
 interface PeopleState {
   people: SWPeopleDTO[];
   person: string[];
   next: string | null;
   previous: string | null;
+  load: boolean;
 }
 
 const initialState: PeopleState = {
@@ -16,6 +18,7 @@ const initialState: PeopleState = {
   person: [],
   next: null,
   previous: null,
+  load: true,
 };
 
 export const peopleSlice = createSlice({
@@ -29,7 +32,14 @@ export const peopleSlice = createSlice({
   extraReducers: (build) => {
     build
       .addCase(searchAllPeople.fulfilled, (state: PeopleState, action: PayloadAction<SWPeopleDTO[]>) => {
-        state.people = action.payload;
+        state.people = action.payload.map((item) => {
+          const id = getId(item.url);
+          return { ...item, id };
+        });
+        state.load = false;
+      })
+      .addCase(searchAllPeople.pending, (state: PeopleState) => {
+        state.load = true;
       })
       .addCase(getPeopleById.fulfilled, (state: PeopleState, action) => {
         state.people.push(action.payload);

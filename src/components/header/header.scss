@@ -2,12 +2,13 @@
 
 .header {
   @include font-mixin-normal;
+  border-bottom: $border-accent-3px;
   position: absolute;
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  height: 100px;
+  height: 103px;
   z-index: 2;
 
   &__right--side {

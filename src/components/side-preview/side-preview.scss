@@ -130,15 +130,14 @@
 }
 
 .small__wrapper {
-  position: relative;
   width: 500px;
-
 
   .small__wrapper-image {
     @include outline-accent;
     object-fit: cover;
     width: 375px;
     height: 271px;
+    object-position: 50% 20%;
   }
 }
 
@@ -158,8 +157,11 @@
 
 .small__heading {
   position: absolute;
-  bottom: 70px;
-  left: 35%;
+  bottom: 20px;
+  left: 50%;
+  padding: 10px;
+  text-align: center;
+  background-color: rgba(255, 201, 0);
 
   @include font-mixin-black;
   font-weight: 900;
@@ -167,8 +169,38 @@
   line-height: 70px;
   letter-spacing: 0.01em;
   text-transform: uppercase;
-  color: $accent-color;
-  white-space: nowrap;
+  color: $main-color;
+  white-space: pre-wrap;
+  border-radius: 6px;
+  transition: 0.5s;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none;   /* Chrome/Safari/Opera */
+  -khtml-user-select: none;    /* Konqueror */
+  -moz-user-select: none;      /* Firefox */
+  -ms-user-select: none;       /* Internet Explorer/Edge */
+  user-select: none;
+
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+    background: linear-gradient(
+                    60deg,
+                    rgba(60, 88, 123, 1),
+                    rgba(76, 60, 123, 1),
+                    rgba(123, 60, 94, 1),
+                    rgba(198, 22, 22, 1)
+    );
+    background-size: 300% 300%;
+    background-position: 0 50%;
+    border-radius: 6px;
+    animation: moveGradient 8s alternate infinite;
+    color: $accent-color;
+    transition: 1s;
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
 }
 
 .big-image {

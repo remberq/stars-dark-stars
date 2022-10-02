@@ -15,4 +15,5 @@ export interface SWPeopleDTO {
   starships: string[];
   url: string;
   vehicles: string[];
+  id: RegExpMatchArray | null;
 }

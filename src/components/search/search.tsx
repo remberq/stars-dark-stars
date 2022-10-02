@@ -1,5 +1,6 @@
 import { FC } from 'react';
 import { NavLink } from 'react-router-dom';
+import DocumentTitle from 'react-document-title';
 import './search.scss';
 
 import icons from './index';
@@ -7,14 +8,14 @@ import icons from './index';
 const iconData = [
   { name: 'Planets', img: icons.planet, id: 'planets' },
   { name: 'Vehicles', img: icons.falcon, id: 'vehicles' },
-  { name: 'People', img: icons.darth, id: 'people' },
+  { name: 'People', img: icons.darth, id: 'team' },
   { name: 'Starships', img: icons.death, id: 'starships' },
   { name: 'Films', img: icons.film, id: 'films' },
 ];
 
 const Search: FC = () => {
   return (
-    <>
+    <DocumentTitle title={'Search'}>
       <div className={'search__ground'}>
         <section className={'search'}>
           <div className={'how__back search-bg'}>
@@ -38,7 +39,7 @@ const Search: FC = () => {
           </div>
         </section>
       </div>
-    </>
+    </DocumentTitle>
   );
 };
 
