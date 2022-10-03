@@ -1,6 +1,5 @@
 import { FC } from 'react';
 import { NavLink } from 'react-router-dom';
-import DocumentTitle from 'react-document-title';
 import './search.scss';
 
 import icons from './index';
@@ -15,31 +14,29 @@ const iconData = [
 
 const Search: FC = () => {
   return (
-    <DocumentTitle title={'Search'}>
-      <div className={'search__ground'}>
-        <section className={'search'}>
-          <div className={'how__back search-bg'}>
-            <p className={'how__back-title left'}>star</p>
-            <p className={'how__back-title right'}>wars</p>
-          </div>
-          <nav className={'search__icons'}>
-            {iconData.map((icon) => {
-              return (
-                <NavLink to={`/main/${icon.id}`} key={icon.id} className={'search__icon'}>
-                  <img src={icon.img} alt={icon.name} className={'icon__img'} />
-                  <p className={'icon__text'}>{icon.name}</p>
-                </NavLink>
-              );
-            })}
-          </nav>
-          <div className={'decor__line'}>
-            <NavLink to={'/main'}>
-              <h2 className={'decor__line-text'}>main</h2>
-            </NavLink>
-          </div>
-        </section>
-      </div>
-    </DocumentTitle>
+    <div className={'search__ground'}>
+      <section className={'search'}>
+        <div className={'how__back search-bg'}>
+          <p className={'how__back-title left'}>star</p>
+          <p className={'how__back-title right'}>wars</p>
+        </div>
+        <nav className={'search__icons'}>
+          {iconData.map((icon) => {
+            return (
+              <NavLink to={`/main/${icon.id}`} key={icon.id} className={'search__icon'}>
+                <img src={icon.img} alt={icon.name} className={'icon__img'} />
+                <p className={'icon__text'}>{icon.name}</p>
+              </NavLink>
+            );
+          })}
+        </nav>
+        <div className={'decor__line'}>
+          <NavLink to={'/main'}>
+            <h2 className={'decor__line-text'}>main</h2>
+          </NavLink>
+        </div>
+      </section>
+    </div>
   );
 };
 

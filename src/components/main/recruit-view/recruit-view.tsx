@@ -18,17 +18,7 @@ const RecruitView: FC = () => {
             processes and technology to yet deliver homes of tomorrow.
           </p>
         </div>
-        <svg
-          className={'recruit__line'}
-          width="340"
-          height="300"
-          viewBox="0 0 340 300"
-          fillOpacity="none"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path d="M340 0H221L0 627H127.5L340 0Z" fill="#FFC900" fillOpacity="none" />
-        </svg>
+        <div className={'recruit__line'}></div>
       </div>
     </section>
   );

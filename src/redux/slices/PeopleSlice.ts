@@ -7,7 +7,7 @@ import { getId } from '../../components/side-preview/idMatcher';
 
 interface PeopleState {
   people: SWPeopleDTO[];
-  person: string[];
+  person: SWPeopleDTO | null;
   next: string | null;
   previous: string | null;
   load: boolean;
@@ -15,7 +15,7 @@ interface PeopleState {
 
 const initialState: PeopleState = {
   people: [],
-  person: [],
+  person: null,
   next: null,
   previous: null,
   load: true,
@@ -24,11 +24,7 @@ const initialState: PeopleState = {
 export const peopleSlice = createSlice({
   name: 'people',
   initialState,
-  reducers: {
-    addPeople: (state: PeopleState, action: PayloadAction<string>) => {
-      state.person.push(action.payload);
-    },
-  },
+  reducers: {},
   extraReducers: (build) => {
     build
       .addCase(searchAllPeople.fulfilled, (state: PeopleState, action: PayloadAction<SWPeopleDTO[]>) => {
@@ -41,8 +37,13 @@ export const peopleSlice = createSlice({
       .addCase(searchAllPeople.pending, (state: PeopleState) => {
         state.load = true;
       })
-      .addCase(getPeopleById.fulfilled, (state: PeopleState, action) => {
-        state.people.push(action.payload);
+      .addCase(getPeopleById.fulfilled, (state: PeopleState, action: PayloadAction<SWPeopleDTO>) => {
+        const id = getId(action.payload.url);
+        state.person = { ...action.payload, id };
+        state.load = false;
+      })
+      .addCase(getPeopleById.pending, (state: PeopleState) => {
+        state.load = true;
       })
       .addCase(
         getAllPeopleNextPage.fulfilled,

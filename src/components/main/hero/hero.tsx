@@ -19,18 +19,7 @@ const Hero: FC = () => {
     <div className="image">
       <main className={'hero'}>
         <div className={'hero__line'}>
-          <Link to={'/'}>
-            <svg
-              className={'line-svg'}
-              width="340"
-              height="627"
-              viewBox="0 0 340 627"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path d="M340 0H221L0 627H127.5L340 0Z" fill="#FFC900" />
-            </svg>
-          </Link>
+          <div className={'line'}></div>
         </div>
         <div className={'hero__main'}>
           <div className={'hero__main-wrapper'}>

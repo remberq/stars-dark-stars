@@ -2,7 +2,6 @@
   "env": {
     "browser": true,
     "es2021": true,
-    "jest": true
   },
   "ignorePatterns": ["node_modules", "dist", "build"],
   "extends": [
@@ -14,7 +13,6 @@
     "airbnb-typescript",
     "airbnb/hooks",
     "plugin:@typescript-eslint/recommended",
-    "plugin:jest/recommended",
     "plugin:react/jsx-runtime"
   ],
   "parserOptions": {
@@ -26,8 +24,7 @@
     "project": "./tsconfig.json"
   },
   "parser": "@typescript-eslint/parser",
-  "plugins": ["react", "prettier", "import", "@typescript-eslint",
-    "jest"],
+  "plugins": ["react", "prettier", "import", "@typescript-eslint"],
   "globals": {
     "Atomics": "readonly",
     "SharedArrayBuffer": "readonly"

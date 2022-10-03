@@ -19,6 +19,13 @@ $border-main-3px: 3px solid $gray-color--more-dark;
   font-style: normal;
 }
 
+@mixin decor-line($width, $height) {
+  width: $width;
+  height: $height;
+  background-color: $accent-color;
+  transform: skewX(-20deg);
+}
+
 @mixin font-mixin-black {
   font-family: 'Montserrat Black', sans-serif;
   font-style: normal;
@@ -78,6 +85,49 @@ $border-main-3px: 3px solid $gray-color--more-dark;
       transform:scaleX(1) rotate(180deg * $direction);
       transition-delay:0s, $duration, $duration*2;
     }
+  }
+}
+
+@mixin gradient-heading {
+  padding: 10px;
+  text-align: center;
+  background-color: rgba(255, 201, 0);
+  @include font-mixin-black;
+  font-weight: 900;
+  font-size: 41px;
+  line-height: 70px;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  color: $main-color;
+  white-space: pre-wrap;
+  border-radius: 6px;
+  transition: 0.5s;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none;   /* Chrome/Safari/Opera */
+  -khtml-user-select: none;    /* Konqueror */
+  -moz-user-select: none;      /* Firefox */
+  -ms-user-select: none;       /* Internet Explorer/Edge */
+  user-select: none;
+
+  &:hover {
+    cursor: pointer;
+    background: linear-gradient(
+                    60deg,
+                    rgba(60, 88, 123, 1),
+                    rgba(76, 60, 123, 1),
+                    rgba(123, 60, 94, 1),
+                    rgba(198, 22, 22, 1)
+    );
+    background-size: 300% 300%;
+    background-position: 0 50%;
+    border-radius: 6px;
+    animation: moveGradient 8s alternate infinite;
+    color: $accent-color;
+    transition: 0.2s;
+  }
+
+  &:active {
+    transform: scale(0.95);
   }
 }
 

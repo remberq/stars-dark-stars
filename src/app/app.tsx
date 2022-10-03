@@ -7,9 +7,9 @@ import PeopleList from '../components/side-preview/people-list';
 import Search from '../components/search/search';
 import Layout from '../components/layout/Layout';
 import NotFoundPage from '../components/not-found-page/NotFoundPage';
-import LoadingPage from '../components/load-page/LoadingPage';
 import Header from '../components/header/header';
 import Footer from '../components/footer/footer';
+import People from '../components/people/people';
 
 const App: FC = () => (
   <>
@@ -17,17 +17,17 @@ const App: FC = () => (
       <Route path={'/main'} element={<Layout />}>
         <Route path={''} element={<Main />} />
         <Route path={'team'} element={<PeopleList />} />
+        <Route path={'/main/team/:id'} element={<People />} />
         <Route path={'films'} element={<PeopleList />} />
       </Route>
-      <Route path={'/main/team/:id'} element={<Search />} />
       <Route path={'/'} element={<Search />} />
       <Route path={'*'} element={<NotFoundPage />} />
       <Route
-        path={'/test'}
+        path={'/test/1'}
         element={
           <>
             <Header />
-            <LoadingPage />
+            <People />
             <Footer />
           </>
         }

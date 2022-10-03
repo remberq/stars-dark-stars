@@ -13,7 +13,6 @@
   padding-top: 150px;
 
   &__hero {
-
     display: grid;
     grid-template-columns: 40% 60%;
     align-items: end;
@@ -22,6 +21,7 @@
     background-color: $black-color;
     margin-left: 3px;
     @include outline-accent;
+    background-image: url("people-bg.jpg");
 
     &-line {
       position: relative;
@@ -48,7 +48,7 @@
         line-height: 120%;
         letter-spacing: 0.01em;
         text-transform: uppercase;
-        color: $second-color;
+        color: $accent-color;
       }
 
       .hero__subject {
@@ -56,7 +56,7 @@
         font-weight: 400;
         font-size: 24px;
         line-height: 29px;
-        color: $second-color;
+        color: $accent-color;
         margin-bottom: 50px;
       }
 
@@ -159,48 +159,7 @@
   position: absolute;
   bottom: 20px;
   left: 50%;
-  padding: 10px;
-  text-align: center;
-  background-color: rgba(255, 201, 0);
-
-  @include font-mixin-black;
-  font-weight: 900;
-  font-size: 41px;
-  line-height: 70px;
-  letter-spacing: 0.01em;
-  text-transform: uppercase;
-  color: $main-color;
-  white-space: pre-wrap;
-  border-radius: 6px;
-  transition: 0.5s;
-  -webkit-touch-callout: none; /* iOS Safari */
-  -webkit-user-select: none;   /* Chrome/Safari/Opera */
-  -khtml-user-select: none;    /* Konqueror */
-  -moz-user-select: none;      /* Firefox */
-  -ms-user-select: none;       /* Internet Explorer/Edge */
-  user-select: none;
-
-  &:hover {
-    cursor: pointer;
-    transform: scale(1.05);
-    background: linear-gradient(
-                    60deg,
-                    rgba(60, 88, 123, 1),
-                    rgba(76, 60, 123, 1),
-                    rgba(123, 60, 94, 1),
-                    rgba(198, 22, 22, 1)
-    );
-    background-size: 300% 300%;
-    background-position: 0 50%;
-    border-radius: 6px;
-    animation: moveGradient 8s alternate infinite;
-    color: $accent-color;
-    transition: 1s;
-  }
-
-  &:active {
-    transform: scale(0.95);
-  }
+  @include gradient-heading;
 }
 
 .big-image {
@@ -258,6 +217,7 @@
     object-fit: cover;
     width: 620px;
     height: 450px;
+    object-position: 50% 20%;
   }
 }
 

@@ -25,8 +25,9 @@
 
   &__line {
     position: absolute;
+    @include decor-line(120px, 300px);
     top: 120px;
-    left: 150px;
+    left: 20%;
     z-index: 1;
   }
 
@@ -101,8 +102,9 @@
 
   .how-svg {
     position: absolute;
-    top: -50px;
-    left: 150px;
+    @include decor-line(120px, 700px);
+    top: -45px;
+    left: 20%;
   }
 }
 

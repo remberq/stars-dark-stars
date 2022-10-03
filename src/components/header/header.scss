@@ -19,16 +19,14 @@
 
   &__logo {
     margin-left: 60px;
+    transition: transform 0.2s;
 
     .logo-path {
-      transition: fill 0.5s;
+      transition: fill 1s;
     }
 
     &:hover {
       cursor: pointer;
-      .logo-path {
-        fill: #69AED7;
-      }
     }
 
     &:active {
@@ -75,5 +73,53 @@
       cursor: pointer;
       transform: translateX(-5px);
     }
+  }
+}
+
+// Logo animation
+
+svg {
+  width: 100%;
+  max-width: 600px;
+  max-height: 200px;
+  height: auto;
+  box-sizing: border-box;
+}
+
+$color-time: 12s;
+$step: $color-time/4;
+
+stop {
+  animation: colors $color-time infinite;
+}
+
+.stop-1 {
+
+}
+.stop-2 {
+  animation-delay: -$step;
+}
+.stop-3 {
+  animation-delay: -$step*2;
+}
+
+@keyframes colors {
+  15% {
+    stop-color: crimson;
+  }
+  30% {
+    stop-color: gold;
+  }
+  45% {
+    stop-color: teal;
+  }
+  60% {
+    stop-color: yellowgreen;
+  }
+  75% {
+    stop-color: orangered;
+  }
+  90% {
+    stop-color: purple;
   }
 }

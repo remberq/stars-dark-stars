@@ -9,7 +9,7 @@ export const searchAllPeople = createAsyncThunk('people/getPeopleByName', async 
   return response.data.results;
 });
 
-export const getPeopleById = createAsyncThunk('people/getPeopleById', async (id: number) => {
+export const getPeopleById = createAsyncThunk('people/getPeopleById', async (id: string) => {
   const response: AxiosResponse<SWPeopleDTO> = await axiosInstance.get(`/people/${id}/`);
   return response.data;
 });

@@ -1,0 +1,80 @@
+@import "./src/variables";
+
+.people__ground {
+  background-color: $main-color;
+  padding-bottom: 50px;
+}
+
+.people {
+  position: relative;
+  padding-top: 120px;
+  @include container;
+  min-height: 920px;
+  height: 100%;
+
+  &__heading {
+    position: absolute;
+    top: 60%;
+    left: 15%;
+    z-index: 6;
+    @include gradient-heading;
+  }
+
+  &__wrapper {
+    padding-top: 80px;
+    padding-bottom: 100px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+
+    .left {
+      position: relative;
+      z-index: 3;
+      img {
+        border: $border-accent-3px;
+        border-radius: 6px;
+      }
+    }
+
+    .right {
+      width: 90%;
+      border:$border-accent-3px;
+      background-color: $gray-color--more-dark;
+    }
+  }
+
+  &__info {
+    margin: 0 auto;
+    border: $border-accent-3px;
+    width: 94.7%;
+    height: 300px;
+    padding-bottom: 30px;
+    background-color: $gray-color--more-dark;
+  }
+}
+
+
+.people__img {
+  background: $accent-color;
+  animation: myanim 8s infinite alternate;
+  background-position: bottom left;
+  background-size: 50px;
+}
+@keyframes myanim {
+  15% {
+    border-color: crimson;
+  }
+  30% {
+    border-color: gold;
+  }
+  45% {
+    border-color: teal;
+  }
+  60% {
+    border-color: yellowgreen;
+  }
+  75% {
+    border-color: orangered;
+  }
+
+}

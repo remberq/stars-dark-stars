@@ -7,6 +7,7 @@
 }
 
 .hero {
+  position: relative;
   display: grid;
   grid-template-columns: 1fr 1fr;
   width: 100%;
@@ -51,12 +52,16 @@
   }
 
   &__line {
+
     position: relative;
-    z-index: 3;
-    .line-svg {
+
+
+    .line {
       position: absolute;
-      top: 50%;
-      left: 20%;
+      @include decor-line(120px, 500px);
+      top: 45%;
+      left: 40%;
+      z-index: 3;
     }
   }
 }
